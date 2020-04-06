@@ -27,9 +27,13 @@ EOF
 
 cat <<"EOF"
 OBJ= $(SRC:.c=.o)
-CFLAGS= -fPIC $(DEFS)
+TRE_CFLAGS= $(DEFS) $(CFLAGS)
+TRE_LDFLAGS= $(LDFLAGS)
 
 build: $(INSTALL_DEPS)
+
+.c.o:
+	$(CC) $(TRE_CFLAGS) -c $<
 
 install: build
 	$(CP) libtre.so* $(DESTDIR)$(PREFIX)/lib
@@ -40,7 +44,7 @@ libtre.a: $(OBJ)
 	$(RANLIB) $@
 
 libtre.so: $(OBJ) tre-config.h
-	$(CC) -shared -fPIC $(CFLAGS) $? -o $@.$(R)
+	$(CC) -shared -fPIC $(TRE_CFLAGS) $? -o $@.$(R)
 	$(LN) $@.$(R) $@.$(V)
 	$(LN) $@.$(R) $@
 
