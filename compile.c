@@ -20,12 +20,12 @@
 #include <assert.h>
 #include <string.h>
 
-#include "tre-internal.h"
-#include "tre-mem.h"
-#include "tre-stack.h"
-#include "tre-ast.h"
-#include "tre-parse.h"
-#include "tre-compile.h"
+#include "internal.h"
+#include "mem.h"
+#include "stack.h"
+#include "ast.h"
+#include "parse.h"
+#include "compile.h"
 #include "tre.h"
 #include "xmalloc.h"
 

@@ -12,8 +12,8 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include "tre-internal.h"
-#include "tre-stack.h"
+#include "internal.h"
+#include "stack.h"
 #include "xmalloc.h"
 
 union tre_stack_item {

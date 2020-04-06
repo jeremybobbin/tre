@@ -19,8 +19,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "tre-internal.h"
-#include "tre-mem.h"
+#include "internal.h"
+#include "mem.h"
 #include "xmalloc.h"
 
 

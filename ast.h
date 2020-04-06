@@ -10,9 +10,9 @@
 #ifndef TRE_AST_H
 #define TRE_AST_H 1
 
-#include "tre-mem.h"
-#include "tre-internal.h"
-#include "tre-compile.h"
+#include "mem.h"
+#include "internal.h"
+#include "compile.h"
 
 /* The different AST node types. */
 typedef enum {

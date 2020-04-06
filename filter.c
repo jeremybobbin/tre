@@ -16,8 +16,8 @@
 #include <config.h>
 #endif /* HAVE_CONFIG_H */
 #include <stdio.h>
-#include "tre-internal.h"
-#include "tre-filter.h"
+#include "internal.h"
+#include "filter.h"
 
 int
 tre_filter_find(const unsigned char *str, size_t len, tre_filter_t *filter)

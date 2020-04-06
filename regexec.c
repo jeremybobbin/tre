@@ -44,7 +44,7 @@ char *alloca ();
 #endif /* HAVE_MALLOC_H */
 #include <limits.h>
 
-#include "tre-internal.h"
+#include "internal.h"
 #include "tre.h"
 #include "xmalloc.h"
 

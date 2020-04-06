@@ -21,10 +21,10 @@
 #include <limits.h>
 
 #include "xmalloc.h"
-#include "tre-mem.h"
-#include "tre-ast.h"
-#include "tre-stack.h"
-#include "tre-parse.h"
+#include "mem.h"
+#include "ast.h"
+#include "stack.h"
+#include "parse.h"
 
 
 /* Characters with special meanings in regexp syntax. */

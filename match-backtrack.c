@@ -67,9 +67,9 @@ char *alloca ();
 #include <malloc.h>
 #endif /* HAVE_MALLOC_H */
 
-#include "tre-internal.h"
-#include "tre-mem.h"
-#include "tre-match-utils.h"
+#include "internal.h"
+#include "mem.h"
+#include "match-utils.h"
 #include "tre.h"
 #include "xmalloc.h"
 

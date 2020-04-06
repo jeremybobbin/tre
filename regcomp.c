@@ -15,7 +15,7 @@
 #include <stdlib.h>
 
 #include "tre.h"
-#include "tre-internal.h"
+#include "internal.h"
 #include "xmalloc.h"
 
 int

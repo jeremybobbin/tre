@@ -11,8 +11,8 @@
 #endif /* HAVE_CONFIG_H */
 #include <assert.h>
 
-#include "tre-ast.h"
-#include "tre-mem.h"
+#include "ast.h"
+#include "mem.h"
 
 tre_ast_node_t *
 tre_ast_new_node(tre_mem_t mem, tre_ast_type_t type, size_t size)

@@ -18,7 +18,7 @@
 #include <wctype.h>
 #endif /* HAVE_WCTYPE_H */
 
-#include "tre-internal.h"
+#include "internal.h"
 #include "tre.h"
 
 #ifdef HAVE_GETTEXT
