@@ -1,0 +1,49 @@
+#!/bin/sh
+exec 3>&1 1>Makefile
+
+version() {
+	awk    '/#define TRE_VERSION_1/ { maj=$3 }
+		/#define TRE_VERSION_2/ { min=$3 }
+		END { printf("V=%s\nR=%s.%s\n", maj, maj, min) }' tre-config.h
+}
+
+cat <<EOF
+.POSIX:
+PREFIX=/usr/local
+DESTDIR=
+DEFS=-DHAVE_MBSTATE_T -DTRE_MBSTATE -DHAVE_WCTYPE_H -DTRE_REGEX_T_FIELD=value
+INC=  regex.h tre.h tre-config.h
+SRC= ast.c compile.c filter.c match-approx.c match-backtrack.c \
+	match-parallel.c mem.c parse.c regcomp.c regerror.c regexec.c stack.c \
+	xmalloc.c
+INSTALL_DEPS= libtre.so libtre.a
+
+CP=cp -d
+LN=ln -sf
+AR=ar rcu
+RANLIB=ranlib
+$(version)
+EOF
+
+cat <<"EOF"
+OBJ= $(SRC:.c=.o)
+CFLAGS= -fPIC $(DEFS)
+
+build: $(INSTALL_DEPS)
+
+install: build
+	$(CP) libtre.so* $(DESTDIR)$(PREFIX)/lib
+	$(CP) $(INC) $(DESTDIR)$(PREFIX)/include
+
+libtre.a: $(OBJ)
+	$(AR) $@ $?
+	$(RANLIB) $@
+
+libtre.so: $(OBJ) tre-config.h
+	$(CC) -shared -fPIC $(CFLAGS) $? -o $@.$(R)
+	$(LN) $@.$(R) $@.$(V)
+	$(LN) $@.$(R) $@
+
+clean:
+	rm -f $(OBJ) libtre.*
+EOF
