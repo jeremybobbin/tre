@@ -32,6 +32,8 @@
 /* Define if you want TRE to use alloca() instead of malloc() when allocating
    memory needed for regexec operations. */
 #define TRE_USE_ALLOCA 1
+#define alloca(x) __builtin_alloca(x)
+
 
 /* Define to include the system regex.h from TRE regex.h */
 /* #undef TRE_USE_SYSTEM_REGEX_H */
