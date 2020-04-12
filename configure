@@ -37,7 +37,8 @@ build: $(INSTALL_DEPS)
 
 install: build
 	$(CP) libtre.so* $(DESTDIR)$(PREFIX)/lib
-	$(CP) $(INC) $(DESTDIR)$(PREFIX)/include
+	mkdir -p $(DESTDIR)$(PREFIX)/include/tre
+	$(CP) $(INC) $(DESTDIR)$(PREFIX)/include/tre
 
 libtre.a: $(OBJ)
 	$(AR) $@ $?
