@@ -18,7 +18,7 @@ SRC= ast.c compile.c filter.c match-approx.c match-backtrack.c \
 	xmalloc.c
 INSTALL_DEPS= libtre.so libtre.a
 
-CP=cp -a
+CP=cp -af
 LN=ln -sf
 AR=ar rcu
 RANLIB=ranlib
