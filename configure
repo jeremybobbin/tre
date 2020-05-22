@@ -11,7 +11,6 @@ cat <<EOF
 .POSIX:
 PREFIX=/usr/local
 DESTDIR=
-#DEFS=-DHAVE_MBSTATE_T -DTRE_MBSTATE -DHAVE_WCTYPE_H -DTRE_REGEX_T_FIELD=value
 DEFS=-DHAVE_WCTYPE_H -DTRE_REGEX_T_FIELD=value
 INC=  regex.h tre.h tre-config.h
 SRC= ast.c compile.c filter.c match-approx.c match-backtrack.c \
